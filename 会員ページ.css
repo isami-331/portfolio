@@ -1,0 +1,378 @@
+.lst-step li.is-current {
+    background: #f48946;
+    border-radius: 30px 30px 30px 30px;
+    width:340px;
+    color: #000000;
+    font-weight: bold;}
+    .lst-step li.is-confirm {
+        background: #f48946;
+        border-radius: 30px 30px 30px 30px;
+    width:340px;
+        color: #000000;
+        opacity: 0.55; 
+        font-weight: bold;}
+        .lst-step li.is-complete {
+            background: #f48946;
+            border-radius: 30px 30px 30px 30px;
+    width:340px;
+            color: #000000;
+            opacity: 0.55; 
+            font-weight: bold;}
+body{
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+ 
+/* ヘッダー内のアイコンとテキストのスタイル */
+/* ヘッダー内のアイコンとテキストのスタイル */
+.nav__item a {
+    display: flex; /* フレックスボックスを使用して要素を配置 */
+    flex-direction: column; /* 垂直方向に配置 */
+    align-items: center; /* 水平方向に中央揃え */
+    text-align: center; /* テキストを中央揃え */
+}
+
+/* アイコンのスタイル */
+.nav__item a img {
+    margin-bottom: 5px; /* 下に余白を追加（調整可能） */
+}
+
+.smp_tmpl {
+   
+font-weight: bold;
+   
+}
+/* ヘッダーのスタイル */
+.site-header {
+    position: fixed; /* ヘッダーを固定位置に配置 */
+    top: 0; /* ページ上部に配置 */
+    left: 0;
+    width: 100%;
+    max-height: 80%;
+    z-index: 1000; /* ヘッダーを最前面に表示 */
+    transition: height 0.3s ease; /* 高さの変化にアニメーションを追加 */
+    
+}
+
+.icon{
+    margin-top: -40px; /* 上に10pxずらす（調整可能） */
+}
+/* キーフレームアニメーションの定義 */
+@keyframes rotateY {
+    0% {
+        transform: perspective(500px) rotateY(0deg) rotateX(0deg); /* 初期状態：回転なし */
+    }
+    25% {
+        transform: perspective(500px) rotateY(90deg) rotateX(30deg); /* 25%進行時：Y軸に10度回転し、X軸に30度傾く */
+    }
+    50% {
+        transform: perspective(500px) rotateY(180deg) rotateX(0deg); /* 50%進行時：元に戻る */
+    }
+    75% {
+        transform: perspective(500px) rotateY(270deg) rotateX(-30deg); /* 75%進行時：Y軸に-10度回転し、X軸に-30度傾く */
+    }
+    100% {
+        transform: perspective(500px) rotateY(360deg) rotateX(0deg); /* 終了時：元に戻る */
+    }
+}
+
+/* ロゴに初期のスタイルを設定 */
+.logo {
+    transform-origin: center; /* 回転の中心を設定 */
+    transition: transform 0.3s; /* ロゴの変化にトランジションを追加 */
+    animation: rotateY 2s linear infinite; /* ホバー時にアニメーションを適用（無限に繰り返し） */
+}
+
+.logo2 {
+    transform-origin: center; /* 回転の中心を設定 */
+    transition: transform 0.3s; /* ロゴの変化にトランジションを追加 */
+}
+img.logo2{width: 100%;
+    max-width: 196px;
+    vertical-align: middle;
+    
+}
+.site-footer.logo2{
+    margin-left: 3000px!important;
+    margin-top: 200px;
+}
+/* ロゴがホバーされたときのスタイル */
+/* アニメーションを停止するためのクラス */
+.site-header.no-animation .logo {
+    transition: none;
+}
+
+.logo2:hover {
+    animation: rotateY 2s linear infinite; /* ホバー時にアニメーションを適用（無限に繰り返し） */
+}
+
+/* ナビゲーションリンクのスタイルを変更 */
+.nav__item a {
+    /* フォント指定 */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* 例: Helvetica Neueフォントを使用 */
+
+    /* テキストカラー指定 */
+    color: #ffffff; /* テキストを赤色に設定 */
+    text-decoration: none; /* 下線を削除 */
+    font-weight: bold;
+}
+
+/* ナビゲーションリンクのホバースタイルを変更 */
+.nav__item a:hover {
+    color: #1900ff; /* ホバー時のテキストカラーを緑色に設定 */
+    font-weight: bold;
+}
+/* スクロールしてヘッダーが縮むときのスタイル */
+.site-header.scrolled {
+    height: 70px; /* スクロール時の高さを設定 */
+
+}
+/* アイコンの初期状態 */
+.nav__item a .icon {
+    height: 50px; /* アイコンの高さ */
+    transition: height 0.5s ease; /* 高さの変化にアニメーションを追加 */
+}
+
+/* スクロール時にアイコンの高さを0にする */
+.nav__item.scrolled a .icon {
+    height: 0; /* アイコンの高さを0に変更 */
+}
+
+/* ヘッダー内の要素（ロゴ）のスタイル */
+.site-header .logo {
+    max-height: 40px; /* ロゴの最大高さを設定 */
+    transition: max-height 0.3s ease, margin-top 0.3s ease; /* マージンのトランジションを追加 */
+    margin-bottom: 20px; /* マージンを初期化 */
+}
+
+/* スクロールしてヘッダーが縮むときのヘッダー内の要素（ロゴ）のスタイル */
+.site-header.scrolled .logo {
+    
+    max-width: 150px; /* スクロール時のロゴの幅を設定 */
+  
+}
+
+.body_tbl {
+    margin-top: 150px; /* ヘッダーの高さよりも大きなマージンを設定 */
+    max-width: 1200px;
+}
+
+.title {
+    text-align: right;
+    margin-bottom: 5px;
+    width: 100%; /* 幅を100%に設定 */
+   
+}
+
+/* 必須ラベルのスタイル */
+.need {
+    color: red; /* 赤色で表示 */
+    margin-left: 5px;
+}
+/*会員証デザイン*/
+.member_card {
+    background: linear-gradient(to right,
+     rgba(154, 145, 223, 1), 
+     rgba(141, 139, 226, 1),
+     rgba(168, 151, 220, 1), 
+     rgba(194, 162, 215, 1),
+     rgba(200, 165, 214, 1),
+     rgba(232, 178, 207, 1),
+     rgba(253, 187, 203, 1),
+     rgba(232, 178, 207, 1),
+     rgba(200, 165, 214, 1),
+     rgba(194, 162, 215, 1),
+     rgba(168, 151, 220, 1),
+     rgba(141, 139, 226, 1),
+     rgba(154, 145, 223, 1)
+     ) 0% center/200%;
+    animation: member_card 2s linear infinite;
+    /*border: 20px solid #000000;
+    border-radius: 20px;
+    padding: 1.5em;
+    margin: 1em 0em;*/
+   
+}
+@keyframes member_card {
+    /* backgroundを移動させる */
+    100% { background-position-x: 200%; }
+  }
+
+     /* 裏面を非表示 */
+     .card .back {
+        display: none;
+    }
+
+/* 通常のボタンスタイル */
+input.submit {
+
+    width: 270px;
+    height: 70px;
+    margin: 40px 0;
+    border: hidden;
+    border-radius: 2px;
+    background: #646565; /* バックグラウンドカラーを一箇所で指定 */
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+/* 無効な状態のボタンスタイル */
+input.submit[disabled] {
+    background-color: #cccccc;
+    color: #999999;
+    cursor: not-allowed;
+    border-radius: 20px;
+}
+
+/*フッターのフォント*/
+.site-footer {
+    color: #ffffff;
+    font-weight: bold;
+}
+/* ラベルのスタイル */
+label {
+    text-align: center; /* テキストを中央詰めにする */
+    display: block; /* ブロック要素として表示 */
+    margin-bottom: 5px; /* ラベルとテキストボックスの間に余白を設定 */
+}
+/*入浴フォームの文字設定*/
+.title-label {
+    font-size: 24px; /* フォントサイズを調整 */
+    text-align: center; /* テキストを中央詰めにする */
+    display: block; /* ブロック要素として表示 */
+}
+/*入力ボックスの枠線*/
+input.input {
+    border-width: 2px; /* 枠線の幅を2pxに設定 */
+    border-color: #000000; /* 枠線の色を黒色に設定 */
+}
+
+/*フッター、ヘッダーの角を丸くする*/
+.site-footer{
+    border-radius:130px 130px 0px 0px/80px 80px 0px 0px;
+}
+
+.site-header{
+    border-radius:0px 0px 100px 100px/0px 0px 30px 30px;
+}
+
+
+/*トップに戻るボタン*/
+#intro {
+    width: 200px;
+    margin: 100px auto 0;
+    }
+    
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      position: relative;
+      margin-top: 40px;
+    }
+    
+    .button .bottom {
+      position: absolute;
+      left: 7px;
+      top: 7px;
+      width: 100%;
+      height: 100%;
+      background-color: #2acdc1;
+      display: block;
+      -webkit-transition: all .15s ease-out;
+      -moz-transition: all .15s ease-out;
+      -o-transition: all .15s ease-out;
+      transition: all .15s ease-out;
+    }
+    
+    .button .top {
+      position: relative;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      padding: 24px 34px 22px 34px;
+      border: 2px solid #04049d;
+    }
+    
+    .button-dark .top {
+      border: 2px solid #fff;
+    }
+    
+    .button .top .label {
+      font-family: sans-serif;
+      font-weight: 600;
+      color: #04049d;
+      font-size: 12px;
+      line-height: 110%;
+      letter-spacing: 2px;
+      text-align: center;
+      text-transform: uppercase;
+      -webkit-transition: all .15s ease-out;
+      -moz-transition: all .15s ease-out;
+      -o-transition: all .15s ease-out;
+      transition: all .15s ease-out;
+    }
+    
+    .button-dark .top .label {
+      color: #fff;
+    }
+    
+    .button:hover .bottom {
+      left: 0;
+      top: 0;
+      background-color: #f3f3f3;
+    }
+    
+    .button:hover .top .label {
+      color: #2acdc1;
+    }
+    
+    .button-border {
+      position: absolute;
+      background-color: #2acdc1;
+      -webkit-transition: all .25s ease-out;
+      -moz-transition: all .25s ease-out;
+      -o-transition: all .25s ease-out;
+      transition: all .25s ease-out;
+    }
+    
+    .button:hover .top .button-border-left,.button:hover .top .button-border-right {
+      height: calc(100% + 2px);
+    }
+    
+    .button:hover .top .button-border-top,.button:hover .top .button-border-bottom {
+      width: calc(100% + 2px);
+    }
+    
+    .button-border-left {
+      left: -2px;
+      bottom: -2px;
+      width: 2px;
+      height: 0;
+    }
+    
+    .button-border-top {
+      left: -2px;
+      top: -2px;
+      width: 0;
+      height: 2px;
+    }
+    
+    .button-border-right {
+      right: -2px;
+      top: -2px;
+      width: 2px;
+      height: 0;
+    }
+    
+    .button-border-bottom {
+      right: -2px;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+    }
+    /*トップに戻るボタン*/
